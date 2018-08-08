@@ -2,7 +2,7 @@
         if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
             document.addEventListener('deviceready', checkFirstUse, false);
         } else {
-            checkFirstUse();
+            notFirstUse();
         }
     }
     var admobid = {};
@@ -60,11 +60,18 @@
         $(".dropList").select2();
         $('#simplemenu').sidr();
         initApp();
-        window.ga.startTrackerWithId('UA-88579601-15', 1, function(msg) {
+        window.ga.startTrackerWithId('UA-88579601-18', 1, function(msg) {
             window.ga.trackView('Dayton Home');
         });  
         askRating();
         //document.getElementById('screen').style.display = 'none';     
+    }
+
+    function notFirstUse()
+    {
+        $(".dropList").select2();
+        $('#simplemenu').sidr();
+        document.getElementById('screen').style.display = 'none';     
     }
 
 function askRating()
@@ -75,7 +82,7 @@ function askRating()
   usesUntilPrompt: 10,
   promptAgainForEachNewVersion: true,
   storeAppURL: {
-                ios: '1225698349',
+                ios: '1227249187',
                 android: 'market://details?id=com.dayton.free'
                }
 };
