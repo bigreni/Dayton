@@ -40,10 +40,12 @@
             document.getElementById('screen').style.display = 'none';     
         });
         document.addEventListener('onAdLoaded', function (data) {
-            AdMob.showInterstitial();
+            document.getElementById('screen').style.display = 'none';     
         });
         document.addEventListener('onAdPresent', function (data) { });
-        document.addEventListener('onAdLeaveApp', function (data) { });
+        document.addEventListener('onAdLeaveApp', function (data) { 
+            document.getElementById('screen').style.display = 'none';     
+        });
         document.addEventListener('onAdDismiss', function (data) { 
             document.getElementById('screen').style.display = 'none';     
         });
@@ -55,8 +57,8 @@
 
     function loadInterstitial() {
         if ((/(android|windows phone)/i.test(navigator.userAgent))) {
-            //AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
-            document.getElementById("screen").style.display = 'none';     
+            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
+            //document.getElementById("screen").style.display = 'none';     
         } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: true });
             //document.getElementById("screen").style.display = 'none';     
@@ -70,9 +72,6 @@
     {
         $(".dropList").select2();
         initApp();
-        //window.ga.startTrackerWithId('UA-88579601-18', 1, function(msg) {
-        //    window.ga.trackView('Dayton Home');
-        //});  
         askRating();
         //document.getElementById('screen').style.display = 'none';     
     }
@@ -101,14 +100,27 @@ AppRate.promptForRating(false);
 
 function loadFaves()
 {
+    showAd();
     window.location = "Favorites.html";
-    //window.ga.trackView('Dayton Favorites');
+}
+
+function showAd()
+{
+    document.getElementById("screen").style.display = 'block'; 
+    if ((/(android|windows phone)/i.test(navigator.userAgent))) {
+        AdMob.isInterstitialReady(function(isready){
+            if(isready) 
+                AdMob.showInterstitial();
+        });
+    }
+    document.getElementById("screen").style.display = 'none'; 
 }
 
 function getDirections() {
     reset();
     var url = encodeURI("http://ridetime.greaterdaytonrta.org/bustime/map/getDirectionsStopsForRoute.jsp?route=" + $("#MainMobileContent_routeList").val());
-	$.get(url, function(data) {processXmlDocumentDirections(data); });    $("span").remove();
+	$.get(url, function(data) {processXmlDocumentDirections(data); });
+    $("span").remove();
     $(".dropList").select2();
 }
 
@@ -163,6 +175,7 @@ function processXmlDocumentStops(xml)
 }
 
 function getArrivalTimes() {
+    showAd();
     reset();
     var url = encodeURI("http://ridetime.greaterdaytonrta.org/bustime/eta/getStopPredictionsETA.jsp?route=" + $("#MainMobileContent_routeList").val() + "&stop=" + $("#MainMobileContent_stopList").val());
 	$.get(url, function(data) {  processXmlDocumentPredictions(data); });       
