@@ -5,67 +5,43 @@
             notFirstUse();
         }
     }
-    var admobid = {};
-    if (/(android)/i.test(navigator.userAgent)) {
-        admobid = { // for Android
-            banner: 'ca-app-pub-1683858134373419/7790106682',
-            interstitial:'ca-app-pub-9249695405712287/4521058238'
-        };
-    } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
-    admobid = {
-      banner: 'ca-app-pub-1683858134373419/7790106682', 
-      interstitial: 'ca-app-pub-9249695405712287/3906814711'
-    };
-  }
 
     function initApp() {
-        if (!AdMob) { alert('admob plugin not ready'); return; }
-        initAd();
-        //display interstitial at startup
-        loadInterstitial();
+        if (/(android)/i.test(navigator.userAgent)){
+            interstitial = new admob.InterstitialAd({
+                //dev
+                //adUnitId: 'ca-app-pub-3940256099942544/1033173712'
+                //prod
+                adUnitId: 'ca-app-pub-9249695405712287/4521058238'
+              });
+            }
+            else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
+                interstitial = new admob.InterstitialAd({
+                    //dev
+                    adUnitId: 'ca-app-pub-3940256099942544/4411468910'
+                    //prod
+                    //adUnitId: 'ca-app-pub-9249695405712287/3906814711'
+                  });
+            }
+            registerAdEvents();
+            interstitial.load();
     }
-    function initAd() {
-        var defaultOptions = {
-            position: AdMob.AD_POSITION.BOTTOM_CENTER,
-            bgColor: 'black', // color name, or '#RRGGBB'
-            isTesting: false // set to true, to receiving test ad for testing purpose
-        };
-        AdMob.setOptions(defaultOptions);
-        registerAdEvents();
-    }
+
     // optional, in case respond to events or handle error
     function registerAdEvents() {
         // new events, with variable to differentiate: adNetwork, adType, adEvent
-        document.addEventListener('onAdFailLoad', function (data) {
-            document.getElementById('screen').style.display = 'none';     
+        document.addEventListener('admob.ad.load', function (data) {
+            document.getElementById("screen").style.display = 'none';    
         });
-        document.addEventListener('onAdLoaded', function (data) {
-            document.getElementById('screen').style.display = 'none';     
+        document.addEventListener('admob.ad.loadfail', function (data) {
+            document.getElementById("screen").style.display = 'none'; 
         });
-        document.addEventListener('onAdPresent', function (data) { });
-        document.addEventListener('onAdLeaveApp', function (data) { 
-            document.getElementById('screen').style.display = 'none';     
-        });
-        document.addEventListener('onAdDismiss', function (data) { 
-            document.getElementById('screen').style.display = 'none';     
-        });
-    }
-
-    function createSelectedBanner() {
-          AdMob.createBanner({adId:admobid.banner});
-    }
-
-    function loadInterstitial() {
-        if ((/(android|windows phone)/i.test(navigator.userAgent))) {
-            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
-            //document.getElementById("screen").style.display = 'none';     
-        } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
-            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
-            //document.getElementById("screen").style.display = 'none';     
-        } else
-        {
+        document.addEventListener('admob.ad.show', function (data) { 
             document.getElementById("screen").style.display = 'none';     
-        }
+        });
+        document.addEventListener('admob.ad.dismiss', function (data) {
+            document.getElementById("screen").style.display = 'none';     
+        });
     }
 
    function checkFirstUse()
@@ -104,22 +80,23 @@
     
     function askRating()
     {
-    cordova.plugins.AppRate.setPreferences = {
-    reviewType: {
-        ios: 'AppStoreReview',
-        android: 'InAppBrowser'
-        },
-    useLanguage:  'en',
-    usesUntilPrompt: 10,
-    promptAgainForEachNewVersion: true,
-    storeAppURL: {
+        const appRatePlugin = AppRate;
+        appRatePlugin.setPreferences({
+            reviewType: {
+                ios: 'AppStoreReview',
+                android: 'InAppBrowser'
+                },
+        useLanguage:  'en',
+        usesUntilPrompt: 10,
+        promptAgainForEachNewVersion: true,
+        storeAppURL: {
                     ios: '1227249187',
                     android: 'market://details?id=com.dayton.free'
-                }
-};
- 
-AppRate.promptForRating(false);
-}
+                   }
+        });
+        
+        AppRate.promptForRating(false);   
+    }
 
 function loadFaves()
 {
@@ -129,14 +106,11 @@ function loadFaves()
 
 function showAd()
 {
-    document.getElementById("screen").style.display = 'block';     
     if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
-        AdMob.isInterstitialReady(function(isready){
-            if(isready) 
-                AdMob.showInterstitial();
-        });
+        document.getElementById("screen").style.display = 'block';     
+        interstitial.show();
+        document.getElementById("screen").style.display = 'none';
     }
-    document.getElementById("screen").style.display = 'none'; 
 }
 
 function getDirections() {
