@@ -46,12 +46,12 @@
 		BB80ABE126C349F1938129BA /* CDVInAppBrowserNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B64841475B949E19589A798 /* CDVInAppBrowserNavigationController.m */; };
 		9235606978A846E984F5C870 /* CDVWKInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC11C46F76A8467ABB38BAA3 /* CDVWKInAppBrowser.m */; };
 		A20B76F74F76415E8D6A10DA /* CDVWKInAppBrowserUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AA50EC4B0C4B80A8F257BD /* CDVWKInAppBrowserUIDelegate.m */; };
-		4B18EC1B66E84135ADB3BC35 /* InAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC169B470024B90A8C92202 /* InAppPurchase.m */; };
-		9E70BBE0882D41648D4067F2 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D7BBE4021347669C760F48 /* SKProduct+LocalizedPrice.m */; };
-		92C41872D46B43B18ADFE3A6 /* SKProductDiscount+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FB7664BF4446599E7097D4 /* SKProductDiscount+LocalizedPrice.m */; };
-		7533473CB01644B0A44D38FA /* FileUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 40F677D7DE784785AF1BE017 /* FileUtility.m */; };
 		71E60AD3BE3E4995B67464EF /* CDVWKWebViewFileXhr.m in Sources */ = {isa = PBXBuildFile; fileRef = B69283C32D904C8A8C227991 /* CDVWKWebViewFileXhr.m */; };
 		94AD5C4D21B5444D9A82D228 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6D8F8A647C419B82F5E24A /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		91E15AC1B0DF4F87A1CE40D9 /* InAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F886B08B3C48B293334144 /* InAppPurchase.m */; };
+		0A45C39D6D1040BBA1661A30 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C685B454854F5EBA49E6B3 /* SKProduct+LocalizedPrice.m */; };
+		5A86468B7B2E404DA9E41E7D /* SKProductDiscount+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 94973FA0D6344EABA1372606 /* SKProductDiscount+LocalizedPrice.m */; };
+		7DF3B576A2CF41DFBEB7576D /* FileUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CF888885BC46109DB27744 /* FileUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,17 +156,17 @@
 		B6E36D463E03466B98714747 /* CDVInAppBrowserNavigationController.h */ = {isa = PBXFileReference; name = "CDVInAppBrowserNavigationController.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowserNavigationController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		B326D75ED6CB40E89992D286 /* CDVWKInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVWKInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		C2E1CF81C3BC4F5D806FFE25 /* CDVWKInAppBrowserUIDelegate.h */ = {isa = PBXFileReference; name = "CDVWKInAppBrowserUIDelegate.h"; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowserUIDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		9FC169B470024B90A8C92202 /* InAppPurchase.m */ = {isa = PBXFileReference; name = "InAppPurchase.m"; path = "cordova-plugin-purchase/InAppPurchase.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		E7D7BBE4021347669C760F48 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; name = "SKProduct+LocalizedPrice.m"; path = "cordova-plugin-purchase/SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		D8FB7664BF4446599E7097D4 /* SKProductDiscount+LocalizedPrice.m */ = {isa = PBXFileReference; name = "SKProductDiscount+LocalizedPrice.m"; path = "cordova-plugin-purchase/SKProductDiscount+LocalizedPrice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		40F677D7DE784785AF1BE017 /* FileUtility.m */ = {isa = PBXFileReference; name = "FileUtility.m"; path = "cordova-plugin-purchase/FileUtility.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		16BFD419A97341FBBAB0D3C9 /* InAppPurchase.h */ = {isa = PBXFileReference; name = "InAppPurchase.h"; path = "cordova-plugin-purchase/InAppPurchase.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		6745F44FDDA541B0B19940C9 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; name = "SKProduct+LocalizedPrice.h"; path = "cordova-plugin-purchase/SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		919E6401F985422F9F1F90D2 /* SKProductDiscount+LocalizedPrice.h */ = {isa = PBXFileReference; name = "SKProductDiscount+LocalizedPrice.h"; path = "cordova-plugin-purchase/SKProductDiscount+LocalizedPrice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		D7B6D1B23ED8486FB3DA022B /* FileUtility.h */ = {isa = PBXFileReference; name = "FileUtility.h"; path = "cordova-plugin-purchase/FileUtility.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		B69283C32D904C8A8C227991 /* CDVWKWebViewFileXhr.m */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.m"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		6E3D6E1FC42845938FD5E5F7 /* CDVWKWebViewFileXhr.h */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.h"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		4B6D8F8A647C419B82F5E24A /* WebKit.framework */ = {isa = PBXFileReference; name = "WebKit.framework"; path = "System/Library/Frameworks/WebKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		B0F886B08B3C48B293334144 /* InAppPurchase.m */ = {isa = PBXFileReference; name = "InAppPurchase.m"; path = "cordova-plugin-purchase/InAppPurchase.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		15C685B454854F5EBA49E6B3 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; name = "SKProduct+LocalizedPrice.m"; path = "cordova-plugin-purchase/SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		94973FA0D6344EABA1372606 /* SKProductDiscount+LocalizedPrice.m */ = {isa = PBXFileReference; name = "SKProductDiscount+LocalizedPrice.m"; path = "cordova-plugin-purchase/SKProductDiscount+LocalizedPrice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		42CF888885BC46109DB27744 /* FileUtility.m */ = {isa = PBXFileReference; name = "FileUtility.m"; path = "cordova-plugin-purchase/FileUtility.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		184A87FE47E74864BA11E1B3 /* InAppPurchase.h */ = {isa = PBXFileReference; name = "InAppPurchase.h"; path = "cordova-plugin-purchase/InAppPurchase.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3934F67717B6446CAE372A9A /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; name = "SKProduct+LocalizedPrice.h"; path = "cordova-plugin-purchase/SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E8FFFE1A21444D81A5E520AF /* SKProductDiscount+LocalizedPrice.h */ = {isa = PBXFileReference; name = "SKProductDiscount+LocalizedPrice.h"; path = "cordova-plugin-purchase/SKProductDiscount+LocalizedPrice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		9238DD38A495424A88B8BC05 /* FileUtility.h */ = {isa = PBXFileReference; name = "FileUtility.h"; path = "cordova-plugin-purchase/FileUtility.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,16 +311,16 @@
 				B6E36D463E03466B98714747 /* CDVInAppBrowserNavigationController.h */,
 				B326D75ED6CB40E89992D286 /* CDVWKInAppBrowser.h */,
 				C2E1CF81C3BC4F5D806FFE25 /* CDVWKInAppBrowserUIDelegate.h */,
-				9FC169B470024B90A8C92202 /* InAppPurchase.m */,
-				E7D7BBE4021347669C760F48 /* SKProduct+LocalizedPrice.m */,
-				D8FB7664BF4446599E7097D4 /* SKProductDiscount+LocalizedPrice.m */,
-				40F677D7DE784785AF1BE017 /* FileUtility.m */,
-				16BFD419A97341FBBAB0D3C9 /* InAppPurchase.h */,
-				6745F44FDDA541B0B19940C9 /* SKProduct+LocalizedPrice.h */,
-				919E6401F985422F9F1F90D2 /* SKProductDiscount+LocalizedPrice.h */,
-				D7B6D1B23ED8486FB3DA022B /* FileUtility.h */,
 				B69283C32D904C8A8C227991 /* CDVWKWebViewFileXhr.m */,
 				6E3D6E1FC42845938FD5E5F7 /* CDVWKWebViewFileXhr.h */,
+				B0F886B08B3C48B293334144 /* InAppPurchase.m */,
+				15C685B454854F5EBA49E6B3 /* SKProduct+LocalizedPrice.m */,
+				94973FA0D6344EABA1372606 /* SKProductDiscount+LocalizedPrice.m */,
+				42CF888885BC46109DB27744 /* FileUtility.m */,
+				184A87FE47E74864BA11E1B3 /* InAppPurchase.h */,
+				3934F67717B6446CAE372A9A /* SKProduct+LocalizedPrice.h */,
+				E8FFFE1A21444D81A5E520AF /* SKProductDiscount+LocalizedPrice.h */,
+				9238DD38A495424A88B8BC05 /* FileUtility.h */,
 			);
 			name = Plugins;
 			path = "RTA Bus Tracker/Plugins";
@@ -511,11 +511,11 @@
 				BB80ABE126C349F1938129BA /* CDVInAppBrowserNavigationController.m in Sources */,
 				9235606978A846E984F5C870 /* CDVWKInAppBrowser.m in Sources */,
 				A20B76F74F76415E8D6A10DA /* CDVWKInAppBrowserUIDelegate.m in Sources */,
-				4B18EC1B66E84135ADB3BC35 /* InAppPurchase.m in Sources */,
-				9E70BBE0882D41648D4067F2 /* SKProduct+LocalizedPrice.m in Sources */,
-				92C41872D46B43B18ADFE3A6 /* SKProductDiscount+LocalizedPrice.m in Sources */,
-				7533473CB01644B0A44D38FA /* FileUtility.m in Sources */,
 				71E60AD3BE3E4995B67464EF /* CDVWKWebViewFileXhr.m in Sources */,
+				91E15AC1B0DF4F87A1CE40D9 /* InAppPurchase.m in Sources */,
+				0A45C39D6D1040BBA1661A30 /* SKProduct+LocalizedPrice.m in Sources */,
+				5A86468B7B2E404DA9E41E7D /* SKProductDiscount+LocalizedPrice.m in Sources */,
+				7DF3B576A2CF41DFBEB7576D /* FileUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
